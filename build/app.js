@@ -38,7 +38,7 @@ function Navigation() {
       "style": {
         "display": "flex",
         "gap": "16px",
-        "fontSize": "14px"
+        "fontSize": "18px"
       }
     }, [__jacJsx(Link, {
       "to": "/chat",
@@ -463,7 +463,8 @@ function ChatPage() {
     }
   }, [__jacJsx("div", {
     "style": {
-      "maxWidth": "800px",
+      "width": "80%",
+      "maxWidth": "1400px",
       "margin": "0 auto",
       "padding": "20px"
     }
@@ -638,7 +639,8 @@ function DashboardPage() {
     }
   }, [__jacJsx("div", {
     "style": {
-      "maxWidth": "900px",
+      "width": "94%",
+      "maxWidth": "1400px",
       "margin": "0 auto"
     }
   }, [__jacJsx("div", {
@@ -650,7 +652,7 @@ function DashboardPage() {
     }
   }, [__jacJsx("div", {}, [__jacJsx("h1", {
     "style": {
-      "fontSize": "24px",
+      "fontSize": "30px",
       "fontWeight": "600"
     }
   }, [header]), __jacJsx("p", {
@@ -662,25 +664,25 @@ function DashboardPage() {
     "style": {
       "background": "#0f172a",
       "borderRadius": "12px",
-      "padding": "16px",
+      "padding": "40px 50px",
       "marginBottom": "16px",
       "border": "1px solid #1f2937"
     }
   }, [__jacJsx("h2", {
     "style": {
-      "fontSize": "16px",
+      "fontSize": "22px",
       "fontWeight": "600",
       "marginBottom": "6px"
     }
   }, ["✨ Today's Vibe"]), __jacJsx("p", {
     "style": {
-      "fontSize": "14px",
+      "fontSize": "18px",
       "marginBottom": "6px"
     }
   }, [message])]), __jacJsx("div", {
     "style": {
       "display": "grid",
-      "gridTemplateColumns": "repeat(auto-fit, minmax(260px, 1fr))",
+      "gridTemplateColumns": "repeat(auto-fit, minmax(400px, 1fr))",
       "gap": "12px"
     }
   }, [__jacJsx("div", {
@@ -692,13 +694,13 @@ function DashboardPage() {
     }
   }, [__jacJsx("h3", {
     "style": {
-      "fontSize": "14px",
+      "fontSize": "18px",
       "fontWeight": "600",
       "marginBottom": "4px"
     }
   }, ["🧠 Mood"]), __jacJsx("p", {
     "style": {
-      "fontSize": "13px"
+      "fontSize": "15px"
     }
   }, [mood_tip])]), __jacJsx("div", {
     "style": {
@@ -709,13 +711,13 @@ function DashboardPage() {
     }
   }, [__jacJsx("h3", {
     "style": {
-      "fontSize": "14px",
+      "fontSize": "18px",
       "fontWeight": "600",
       "marginBottom": "4px"
     }
   }, ["🔮 Horoscope"]), __jacJsx("p", {
     "style": {
-      "fontSize": "13px"
+      "fontSize": "15px"
     }
   }, [horoscope])]), __jacJsx("div", {
     "style": {
@@ -726,13 +728,13 @@ function DashboardPage() {
     }
   }, [__jacJsx("h3", {
     "style": {
-      "fontSize": "14px",
+      "fontSize": "18px",
       "fontWeight": "600",
       "marginBottom": "4px"
     }
   }, ["🎨 Creativity"]), __jacJsx("p", {
     "style": {
-      "fontSize": "13px"
+      "fontSize": "15px"
     }
   }, [creativity_tip])]), __jacJsx("div", {
     "style": {
@@ -743,13 +745,13 @@ function DashboardPage() {
     }
   }, [__jacJsx("h3", {
     "style": {
-      "fontSize": "14px",
+      "fontSize": "18px",
       "fontWeight": "600",
       "marginBottom": "4px"
     }
   }, ["📚 Learning"]), __jacJsx("p", {
     "style": {
-      "fontSize": "13px"
+      "fontSize": "15px"
     }
   }, [learning])]), __jacJsx("div", {
     "style": {
@@ -760,13 +762,13 @@ function DashboardPage() {
     }
   }, [__jacJsx("h3", {
     "style": {
-      "fontSize": "14px",
+      "fontSize": "18px",
       "fontWeight": "600",
       "marginBottom": "4px"
     }
   }, ["📝 Journal Prompt"]), __jacJsx("p", {
     "style": {
-      "fontSize": "13px"
+      "fontSize": "15px"
     }
   }, [journal_prompt])]), __jacJsx("div", {
     "style": {
@@ -777,13 +779,13 @@ function DashboardPage() {
     }
   }, [__jacJsx("h3", {
     "style": {
-      "fontSize": "14px",
+      "fontSize": "18px",
       "fontWeight": "600",
       "marginBottom": "4px"
     }
   }, ["🥗 Nutrition"]), __jacJsx("p", {
     "style": {
-      "fontSize": "13px"
+      "fontSize": "15px"
     }
   }, [nutrition_summary])])])])]);
 }
@@ -814,17 +816,9 @@ function MindmatePage() {
   }, [__jacJsx("div", {
     "style": {
       "flex": "1",
-      "borderRight": "1px solid #1f2937",
       "overflowY": "auto"
     }
-  }, [__jacJsx(ChatPage, {}, [])]), __jacJsx("div", {
-    "style": {
-      "width": "60%",
-      "overflowY": "auto",
-      "padding": "16px",
-      "background": "#0f172a"
-    }
-  }, [__jacJsx(DashboardPage, {}, [])])]);
+  }, [__jacJsx(ChatPage, {}, [])])]);
 }
 function app() {
   return __jacJsx(Router, {}, [__jacJsx("div", {
@@ -843,6 +837,9 @@ function app() {
   }, []), __jacJsx(Route, {
     "path": "/chat",
     "element": __jacJsx(MindmatePage, {}, [])
+  }, []), __jacJsx(Route, {
+    "path": "/dashboard",
+    "element": __jacJsx(DashboardPage, {}, [])
   }, [])])])]);
 }
 export { ChatPage, DashboardPage, HomePage, LoginPage, MindmatePage, Navigation, SignupPage, app };

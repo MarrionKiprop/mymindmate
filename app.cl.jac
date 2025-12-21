@@ -36,7 +36,7 @@ cl {
                     MindMate AI
                 </div>
                 <div
-                    style={{"display": "flex", "gap": "16px", "fontSize": "14px"}}
+                    style={{"display": "flex", "gap": "16px", "fontSize": "18px"}}
                 >
                     <Link
                         to="/chat"
@@ -415,7 +415,7 @@ if result and result.reports and result.reports[0] {
 
     return <div style={{"minHeight":"100vh","background":"#020617","color":"#e5e7eb"}}>
 
-        <div style={{"maxWidth":"800px","margin":"0 auto","padding":"20px"}}>
+        <div style={{"width":"80%","maxWidth":"1400px","margin":"0 auto","padding":"20px"}}>
 
             <div style={{
                 "height":"68vh",
@@ -578,10 +578,11 @@ if result and result.reports and result.reports[0] {
         }}
     >
         <div
-            style={{
-                "maxWidth": "900px",
-                "margin": "0 auto"
-            }}
+    style={{
+        "width": "94%",
+        "maxWidth": "1400px",
+        "margin": "0 auto"
+    }}
         >
 
             # Header
@@ -595,7 +596,7 @@ if result and result.reports and result.reports[0] {
             >
                 <div>
                     <h1
-                        style={{"fontSize": "24px", "fontWeight": "600"}}
+                        style={{"fontSize": "30px", "fontWeight": "600"}}
                     >
                         {header}
                     </h1>
@@ -612,18 +613,18 @@ if result and result.reports and result.reports[0] {
                 style={{
                     "background": "#0f172a",
                     "borderRadius": "12px",
-                    "padding": "16px",
+                    "padding": "40px 50px",
                     "marginBottom": "16px",
                     "border": "1px solid #1f2937"
                 }}
             >
                 <h2
-                    style={{"fontSize": "16px", "fontWeight": "600", "marginBottom": "6px"}}
+                    style={{"fontSize": "22px", "fontWeight": "600", "marginBottom": "6px"}}
                 >
                     ✨ Today's Vibe
                 </h2>
                 <p
-                    style={{"fontSize": "14px", "marginBottom": "6px"}}
+                    style={{"fontSize": "18px", "marginBottom": "6px"}}
                 >
                     {message}
                 </p>
@@ -633,7 +634,7 @@ if result and result.reports and result.reports[0] {
             <div
                 style={{
                     "display": "grid",
-                    "gridTemplateColumns": "repeat(auto-fit, minmax(260px, 1fr))",
+                    "gridTemplateColumns": "repeat(auto-fit, minmax(400px, 1fr))",
                     "gap": "12px"
                 }}
             >
@@ -648,11 +649,11 @@ if result and result.reports and result.reports[0] {
                     }}
                 >
                     <h3
-                        style={{"fontSize": "14px", "fontWeight": "600", "marginBottom": "4px"}}
+                        style={{"fontSize": "18px", "fontWeight": "600", "marginBottom": "4px"}}
                     >
                         🧠 Mood
                     </h3>
-                    <p style={{"fontSize": "13px"}}>
+                    <p style={{"fontSize": "15px"}}>
                         {mood_tip}
                     </p>
                 </div>
@@ -667,11 +668,11 @@ if result and result.reports and result.reports[0] {
                     }}
                 >
                     <h3
-                        style={{"fontSize": "14px", "fontWeight": "600", "marginBottom": "4px"}}
+                        style={{"fontSize": "18px", "fontWeight": "600", "marginBottom": "4px"}}
                     >
                         🔮 Horoscope
                     </h3>
-                    <p style={{"fontSize": "13px"}}>
+                    <p style={{"fontSize": "15px"}}>
                         {horoscope}
                     </p>
                 </div>
@@ -686,11 +687,11 @@ if result and result.reports and result.reports[0] {
                     }}
                 >
                     <h3
-                        style={{"fontSize": "14px", "fontWeight": "600", "marginBottom": "4px"}}
+                        style={{"fontSize": "18px", "fontWeight": "600", "marginBottom": "4px"}}
                     >
                         🎨 Creativity
                     </h3>
-                    <p style={{"fontSize": "13px"}}>
+                    <p style={{"fontSize": "15px"}}>
                         {creativity_tip}
                     </p>
                 </div>
@@ -705,11 +706,11 @@ if result and result.reports and result.reports[0] {
                     }}
                 >
                     <h3
-                        style={{"fontSize": "14px", "fontWeight": "600", "marginBottom": "4px"}}
+                        style={{"fontSize": "18px", "fontWeight": "600", "marginBottom": "4px"}}
                     >
                         📚 Learning
                     </h3>
-                    <p style={{"fontSize": "13px"}}>
+                    <p style={{"fontSize": "15px"}}>
                         {learning}
                     </p>
                 </div>
@@ -724,11 +725,11 @@ if result and result.reports and result.reports[0] {
                     }}
                 >
                     <h3
-                        style={{"fontSize": "14px", "fontWeight": "600", "marginBottom": "4px"}}
+                        style={{"fontSize": "18px", "fontWeight": "600", "marginBottom": "4px"}}
                     >
                         📝 Journal Prompt
                     </h3>
-                    <p style={{"fontSize": "13px"}}>
+                    <p style={{"fontSize": "15px"}}>
                         {journal_prompt}
                     </p>
                 </div>
@@ -743,12 +744,12 @@ if result and result.reports and result.reports[0] {
                     }}
                 >
                     <h3
-                            style={{"fontSize": "14px", "fontWeight": "600", "marginBottom": "4px"}}
+                            style={{"fontSize": "18px", "fontWeight": "600", "marginBottom": "4px"}}
                         >
                             🥗 Nutrition
                         </h3>
 
-                        <p style={{"fontSize": "13px"}}>
+                        <p style={{"fontSize": "15px"}}>
                             {nutrition_summary}
                         </p>
                 </div>
@@ -771,41 +772,29 @@ if result and result.reports and result.reports[0] {
     # Unified Chat + Dashboard
     # --------------------------
     def MindmatePage() -> any {
-        if not jacIsLoggedIn() {
-            return <Navigate to="/login" />;
-        }
+    if not jacIsLoggedIn() {
+        return <Navigate to="/login" />;
+    }
 
-        return <div
+    return <div
+        style={{
+            "display": "flex",
+            "height": "calc(100vh - 48px)",
+            "background": "#020617",
+            "color": "#e5e7eb",
+            "overflow": "hidden"
+        }}
+    >
+        <div
             style={{
-                "display": "flex",
-                "height": "calc(100vh - 48px)",
-                "background": "#020617",
-                "color": "#e5e7eb",
-                "overflow": "hidden"
+                "flex": "1",
+                "overflowY": "auto"
             }}
         >
-            <div
-                style={{
-                    "flex": "1",
-                    "borderRight": "1px solid #1f2937",
-                    "overflowY": "auto"
-                }}
-            >
-                <ChatPage />
-            </div>
-
-            <div
-                style={{
-                    "width": "60%",
-                    "overflowY": "auto",
-                    "padding": "16px",
-                    "background": "#0f172a"
-                }}
-            >
-                <DashboardPage />
-            </div>
-        </div>;
-    }
+            <ChatPage />
+        </div>
+    </div>;
+}
 
     # --------------------------
     # Router
