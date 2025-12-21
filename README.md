@@ -37,7 +37,6 @@ MindMate is made of **three major layers**:
 
 - Walkers:  
   - `chat` — handles every outgoing message  
-  - `MindState` — crawls the user graph and collects state  
   - `generate_insights` — calls LLM extractors and stores logs  
   - `daily_dashboard` — assembles the final dashboard payload  
 
@@ -66,18 +65,18 @@ MyMindMate/
 ├── assets/
 ├── build/
 ├── dist/
-├── node_modules/
+├── src/time_service.py
 │
 ├── app.jac # Backend: graph + walkers + LLM logic
 ├── app.cl.jac # Frontend: React UI
 │
-├── app.session # Graph storage (auto-generated)
-├── app.session.users.json # User account storage
+├
+├
 │
-├── package.json
-├── vite.config.js
+├
+├
 ├── README.md # This file
-└── ...
+└── 
 
 ```
 
@@ -117,19 +116,7 @@ Extracted seeds representing curiosity and creativity.
 - Creates friendly LLM reply  
 - No check-in workflow — natural conversation only  
 
-### **MindState walker**
-Crawls:
 
-- messages  
-- moods  
-- meals  
-- habits  
-- journals  
-- creativity items  
-- learning items  
-- wellbeing logs  
-
-Used by insights and the dashboard.
 
 ### **generate_insights walker**
 Your emotional brain:
@@ -242,18 +229,4 @@ It learns you through your ordinary words and transforms them into wellbeing ins
 
 ## **8. 💙 Built by Marrion Kiprop and Collete Moindi**
 
-This project reflects your strength in:
 
-Graph thinking
-
-AI engineering
-
-NLP & LLM pipelines
-
-Interface design
-
-Emotional computing
-
-Personal creativity
-
-MindMate is a beautiful blend of engineering and empathy.

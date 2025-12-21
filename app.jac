@@ -1,5 +1,5 @@
 ###############################################################
-#                     MINDMATE AI — GRAPHY VERSION
+#                     MINDMATE AI
 ###############################################################
 
 import from byllm.lib { Model }
@@ -86,15 +86,13 @@ edge DidHabit {}       # MindUser --DidHabit--> HabitEntry
 edge LoggedMeal {}     # MindUser --LoggedMeal--> MealLog
 edge CreatedContent {} # MindUser --CreatedContent--> CreativityItem
 edge Learned {}        # MindUser --Learned--> LearningItem
-edge LoggedWellbeing {}
+edge LoggedWellbeing {} # MindUser --LoggedWellbeing--> WellbeingLog
 
 
 ###############################################################
 #                    LLM FUNCTION DECLARATIONS
 ###############################################################
-###############################################################
-#                    LLM FUNCTION DECLARATIONS
-###############################################################
+
 
 def chat_reply(msg: str) -> str by llm;
 sem chat_reply = """
@@ -105,7 +103,7 @@ User said: {{msg}}
 """;
 
 ###############################################################
-#                    LLM EXTRACTORS (STRICT)
+#                    LLM EXTRACTORS 
 ###############################################################
 
 def extract_mood(messages: list[str]) -> str by llm;
@@ -283,6 +281,9 @@ high
 Messages: {{messages}}
 Stress:
 """;
+################################################################
+#                   LLM DASHBOARD GENERATORS
+################################################################
 
 
 def daily_message(
@@ -467,6 +468,7 @@ Must include:
 - NO medical advice
 - NO restrictions
 """;
+
 ###############################################################
 #                     CHAT WALKER
 ###############################################################
@@ -481,7 +483,7 @@ walker chat {
         ts = nowiso();
         u +>:Spoke:+> Conversation(message=self.user_message, timestamp=ts);
 
-        # 2) Reply only (NO extraction here – as you want)
+        # 2) Reply
         r = chat_reply(self.user_message);
 
         report {
@@ -493,7 +495,7 @@ walker chat {
 
 
 ###############################################################
-#                 GENERATE INSIGHTS (FIXED)
+#                 GENERATE INSIGHTS
 # Reads Conversation nodes -> runs extractors -> writes nodes
 ###############################################################
 walker generate_insights {
@@ -521,7 +523,7 @@ walker generate_insights {
 
         ts = nowiso();
 
-        # ---- Store to graph (dedupe-ish: only store if non-empty) ----
+        # ---- Store to graph 
         if mood != "" {
             u +>:LoggedMood:+> MoodLog(mood=mood, timestamp=ts);
         }

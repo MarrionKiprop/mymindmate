@@ -769,7 +769,7 @@ if result and result.reports and result.reports[0] {
     }
 
     # --------------------------
-    # Unified Chat + Dashboard
+    # Unified Chat
     # --------------------------
     def MindmatePage() -> any {
     if not jacIsLoggedIn() {
