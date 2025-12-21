@@ -66,17 +66,10 @@ MyMindMate/
 ├── build/
 ├── dist/
 ├── src/time_service.py
-│
 ├── app.jac # Backend: graph + walkers + LLM logic
 ├── app.cl.jac # Frontend: React UI
-│
-├
-├
-│
-├
-├
 ├── README.md # This file
-└── 
+
 
 ```
 
